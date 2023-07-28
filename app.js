@@ -16,6 +16,9 @@ app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send('Something went wrong!');
 });
+app.get('/favicon.ico', (req, res) => {
+    res.status(204).end();
+  });
 
 app.get('/:route', (req, res, next) => {
   const route = req.params.route;
