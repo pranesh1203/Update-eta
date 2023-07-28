@@ -42,7 +42,7 @@ app.get('/:route', (req, res) =>{
             };
         })
     });
-res.send(200)
+res.sendStatus(200)
 });
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
