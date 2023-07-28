@@ -41,7 +41,6 @@ app.get('/:route', (req, res, next) => {
             .then((response) => {
               const dt = response.data;
               const t = dt.routes[0].summary.travelTimeInSeconds;
-              console.log(t);
               const rt = rte.child(route + '/' + st);
               rt.child('eta').set(t.toString());
               if (t < 60) {
@@ -58,6 +57,7 @@ app.get('/:route', (req, res, next) => {
     });
   });
   res.sendStatus(200);
+  console.log(t);
 });
 
 const port = process.env.PORT || 3000;
