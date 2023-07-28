@@ -44,8 +44,8 @@ app.get('/:route', (req, res) =>{
     });
 res.send(200)
 });
-
-app.listen(3000, () => {
-    console.log('Server listening on port 3000');
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+    console.log('Server listening on port ${port}');
   });
 
